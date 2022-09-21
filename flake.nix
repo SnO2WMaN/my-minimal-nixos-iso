@@ -35,6 +35,10 @@
           format = "install-iso";
         };
         packages.default = self.packages.${system}.minimal-iso;
+
+        checks = {
+          inherit (self.packages.${system}) default;
+        };
       }
     );
 }
